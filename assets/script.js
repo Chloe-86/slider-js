@@ -25,8 +25,10 @@ const slides = [
   const dots = document.querySelectorAll('.dot');
   let slideIndex = 0;
   
+
+  //ici la fonction changeslide
   function changeSlide(index) {
-	slideIndex = (index + slides.length) % slides.length;
+	slideIndex = index;
 	const slide = slides[slideIndex];
 	sliderImg.src = `./assets/images/slideshow/${slide.image}`;
 	document.querySelector('#p').innerHTML = slide.tagLine;
@@ -35,9 +37,6 @@ const slides = [
   
   function updateDots() {
 	dots.forEach((dot, index) => {
-		console.log(index);
-		console.log(dot);
-		console.log(slideIndex+'si');
 	  if (index === slideIndex) {
 		dot.classList.add('dot_selected');
 	  } else {
@@ -47,11 +46,19 @@ const slides = [
   }
   
   left.addEventListener('click', () => {
-	changeSlide(slideIndex - 1);
+	let index = slides.indexOf(slides[slideIndex]) - 1;
+	if (index < 0) {
+	  index = slides.length - 1;
+	}
+	changeSlide(index);
   });
   
   right.addEventListener('click', () => {
-	changeSlide(slideIndex + 1);
+	let index = slides.indexOf(slides[slideIndex]) + 1;
+	if (index > slides.length - 1) {
+	  index = 0;
+	}
+	changeSlide(index);
   });
   
   dots.forEach((dot, index) => {
@@ -61,4 +68,6 @@ const slides = [
   });
   
   changeSlide(0);
+  
+  
   
