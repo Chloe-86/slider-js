@@ -1,5 +1,0 @@
-Github Pages
-https://chloe-86.github.io/slider-js/
-
-Github Repo
-https://github.com/Chloe-86/slider-js
