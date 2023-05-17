@@ -135,6 +135,7 @@ header {
 /* Gestion des points du carrousel */
 .dots {
 	position: absolute;
+	transform: translateX(-50%);
 	bottom: 40px;
 	display: flex;
 }

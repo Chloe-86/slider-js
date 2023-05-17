@@ -49,18 +49,6 @@ function display(){
 display();
 
 
-
-btnBefore.addEventListener('click',()=>{
-    beforeSlide();
-    display();
-})
-
-btnNext.addEventListener('click', ()=>{
-    nextSlide();
-    display();
-})
-
-
 function beforeSlide(){
     
     if(slideIndex === 0){
@@ -82,4 +70,16 @@ function nextSlide(){
         slideIndex++;
     }
 }
+
+btnBefore.addEventListener('click',()=>{
+    beforeSlide();
+    display();
+})
+
+btnNext.addEventListener('click', ()=>{
+    nextSlide();
+    display();
+})
+
+
 
